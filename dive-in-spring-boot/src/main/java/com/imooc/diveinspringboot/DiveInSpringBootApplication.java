@@ -2,6 +2,7 @@ package com.imooc.diveinspringboot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 
 @SpringBootApplication
@@ -9,6 +10,9 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 public class DiveInSpringBootApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(DiveInSpringBootApplication.class, args);
+
+        new SpringApplicationBuilder(DiveInSpringBootApplication.class).run(args);
+
+        // SpringApplication.run(DiveInSpringBootApplication.class, args);
     }
 }
