@@ -2,7 +2,6 @@ package com.imooc.diveinspringboot;
 
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
@@ -24,6 +23,7 @@ public class SpringApplicationBootStrap {
 //        SpringApplication.run(ApplicationConfiguration.class, args);
         SpringApplication springApplication = new SpringApplication();
         springApplication.setSources(sources);
+//        springApplication.setWebApplicationType(WebApplicationType.NONE);
         ConfigurableApplicationContext context = springApplication.run(args);
         System.out.println("Bean：" + context.getBean(ApplicationConfiguration.class));
     }
