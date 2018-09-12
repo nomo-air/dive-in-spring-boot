@@ -8,3 +8,5 @@ org.springframework.context.ApplicationListener=\
 com.imooc.diveinspringboot.listener.AfterHelloWorldApplicationListener,\
 com.imooc.diveinspringboot.listener.HelloWorldApplicationListener
 
+org.springframework.boot.SpringApplicationRunListener=\
+com.imooc.diveinspringboot.run.HelloWorldRunListener
