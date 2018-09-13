@@ -10,6 +10,7 @@
 
     <context:component-scan base-package="com.imooc.web"/>
 
+    <!--
     <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>
 
     <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"/>
@@ -19,5 +20,6 @@
         <property name="prefix" value="/WEB-INF/jsp/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
+    -->
 
 </beans>
