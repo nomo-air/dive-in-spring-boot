@@ -1,6 +1,6 @@
 <web-app>
+    <!--
     <servlet>
-        <!--使用可执行 Tomcat Maven 插件-->
         <plugin>
             <groupId>org.apache.tomcat.maven</groupId>
             <artifactId>tomcat7-maven-plugin</artifactId>
@@ -13,13 +13,13 @@
                     </goals>
                     <phase>package</phase>
                     <configuration>
-                        <!-- ServletContext path -->
+
                         <path>/</path>
                     </configuration>
                 </execution>
             </executions>
         </plugin>
-        <!--Spring Framework 时代的重新认识 Web MVC 核心组件-->
+
         <servlet-name>app</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
@@ -32,4 +32,5 @@
         <servlet-name>app</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+    -->
 </web-app>
