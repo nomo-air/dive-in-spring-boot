@@ -4,6 +4,8 @@
     <title>Title</title>
 </head>
 <body>
-Hello JSP
+    ${message}
+    <language>${acceptLanguage}</language>
+    <jsessionId>${jsessionId}</jsessionId>
 </body>
 </html>
