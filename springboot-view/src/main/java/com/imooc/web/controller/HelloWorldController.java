@@ -15,7 +15,7 @@ public class HelloWorldController {
         return "hello-world"; // View逻辑名称
     }
 
-    @ModelAttribute("message ")
+    @ModelAttribute("message")
     public String message() {
         return "HelloWorld";
     }

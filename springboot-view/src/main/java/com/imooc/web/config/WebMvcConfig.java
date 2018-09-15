@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.Ordered;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ViewResolver;
+import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
@@ -31,6 +32,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
         viewResolver.setPrefix("/WEB-INF/jsp/");
         viewResolver.setSuffix(".jsp");
         viewResolver.setOrder(Ordered.LOWEST_PRECEDENCE - 10);
+        viewResolver.setContentType("text/xml;charset=UTF-8");
         return viewResolver;
     }
 
@@ -44,6 +46,13 @@ public class WebMvcConfig implements WebMvcConfigurer {
                 return true;
             }
         });
+    }
+
+    @Override
+    public void configureContentNegotiation(ContentNegotiationConfigurer configurer) {
+        configurer.favorParameter(true);
+        configurer.favorPathExtension(true);
+        configurer.favorPathExtension(true);
     }
 
     @Bean
