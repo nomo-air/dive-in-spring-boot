@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.imooc</groupId>
-    <artifactId>spring-boot-overview</artifactId>
+    <artifactId>springboot-autoconfigure</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>spring-boot-overview</name>
+    <name>springboot-autoconfigure</name>
     <description>Demo project for Spring Boot</description>
 
     <parent>
