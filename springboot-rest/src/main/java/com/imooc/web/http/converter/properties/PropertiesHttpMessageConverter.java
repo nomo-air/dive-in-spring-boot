@@ -12,6 +12,9 @@ import org.springframework.http.converter.HttpMessageNotWritableException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
 import java.lang.reflect.Type;
 import java.nio.charset.Charset;
 import java.util.Properties;
@@ -28,7 +31,20 @@ public class PropertiesHttpMessageConverter extends AbstractGenericHttpMessageCo
 
     @Override
     protected void writeInternal(Properties properties, Type type, HttpOutputMessage outputMessage) throws IOException, HttpMessageNotWritableException {
-
+        // Properties -> String
+        // OutputStream -> Writer
+        HttpHeaders httpHeaders = outputMessage.getHeaders();
+        MediaType contentType = httpHeaders.getContentType();
+        // 获取字符编码
+        Charset charset = contentType.getCharset();
+        // 当charset不存在时，使用
+        charset = charset == null ? Charset.forName("UTF-8") : charset;
+        // 字节输出流
+        OutputStream outputStream = outputMessage.getBody();
+        // 字符输出流
+        Writer writer = new OutputStreamWriter(outputStream, charset);
+        // Properties 写入到字符输出流
+        properties.store(writer, "From PropertiesHttpMessageConverter");
     }
 
     @Override

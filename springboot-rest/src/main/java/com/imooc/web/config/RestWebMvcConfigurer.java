@@ -16,7 +16,8 @@ public class RestWebMvcConfigurer implements WebMvcConfigurer {
 
     @Override
     public void extendMessageConverters(List<HttpMessageConverter<?>> converters){
-        converters.add(new PropertiesHttpMessageConverter());
+        // 不建议添加到 converters 末尾
+        converters.add(0, new PropertiesHttpMessageConverter()); // 添加到首位
     }
 
 }
