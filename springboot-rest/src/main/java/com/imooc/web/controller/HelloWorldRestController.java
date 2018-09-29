@@ -11,4 +11,9 @@ public class HelloWorldRestController {
         return "hello world";
     }
 
+    @GetMapping("hello")
+    public String hello() {
+        return "hello";
+    }
+
 }
