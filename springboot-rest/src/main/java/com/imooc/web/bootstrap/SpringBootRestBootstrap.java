@@ -6,7 +6,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * Spring Boot Rest 引导类
  */
-@SpringBootApplication(scanBasePackages = "com.imooc.web.controller")
+@SpringBootApplication(scanBasePackages ={
+        "com.imooc.web.controller",
+        "com.imooc.web.config"
+})
 public class SpringBootRestBootstrap {
     public static void main(String[] args) {
         SpringApplication.run(SpringBootRestBootstrap.class, args);
