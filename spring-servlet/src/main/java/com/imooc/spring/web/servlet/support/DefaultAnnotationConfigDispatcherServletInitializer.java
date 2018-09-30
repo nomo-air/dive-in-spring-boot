@@ -1,4 +1,4 @@
-package com.imooc.spring.web.support;
+package com.imooc.spring.web.servlet.support;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;

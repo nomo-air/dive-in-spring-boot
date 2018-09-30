@@ -1,4 +1,4 @@
-package com.imooc.spring.web.controller;
+package com.imooc.spring.web.servlet.controller;
 
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
