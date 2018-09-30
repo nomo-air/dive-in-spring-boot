@@ -10,6 +10,8 @@ import java.util.Random;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.Callable;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.CompletionStage;
 
 
 /**
@@ -40,6 +42,18 @@ public class HelloWorldAsyncController {
             println("执行计算结果，消耗" + timeout + " ms. ");
         } while (result != null);
     }
+
+    @GetMapping("/completion-stage")
+    public CompletionStage<String> completionStage() {
+        final long startTime = System.currentTimeMillis();
+        println("Hello World");
+        return CompletableFuture.supplyAsync(() -> {
+            long costTime = System.currentTimeMillis() - startTime;
+            println("执行计算结果，消耗" + costTime + " ms. ");
+            return "Hello World";
+        });
+    }
+
 
     @GetMapping("/callable-hello-world")
     public Callable<String> callableHelloWorld() {
